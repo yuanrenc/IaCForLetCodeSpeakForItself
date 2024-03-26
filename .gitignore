@@ -1,0 +1,4 @@
+**/*-tfplan
+*.terraform
+**/terraform.tfstate.d/
+**/password.txt

@@ -10,11 +10,11 @@ data "aws_security_group" "app_sg" {
 
 data "aws_subnets" "app" {
   filter {
-    name = "vpc-id"
+    name   = "vpc-id"
     values = [data.aws_vpc.vpc.id]
   }
-   filter {
-     name = "tag:Name"
+  filter {
+    name = "tag:Name"
     values = [
       "${var.env}-let-code-speak-for-itself-app-ap-southeast-2a",
       "${var.env}-let-code-speak-for-itself-app-ap-southeast-2b",
@@ -25,10 +25,10 @@ data "aws_subnets" "app" {
 
 data "aws_subnets" "lb" {
   filter {
-    name = "vpc-id"
+    name   = "vpc-id"
     values = [data.aws_vpc.vpc.id]
   }
-    filter {
+  filter {
     name = "tag:Name"
     values = [
       "${var.env}-let-code-speak-for-itself-lb-ap-southeast-2a",
@@ -44,5 +44,5 @@ data "aws_security_group" "lb_sg" {
 }
 
 data "aws_db_instance" "db" {
-  db_instance_identifier = "${var.env}app"
+  db_instance_identifier = "${var.env}letcodespeakforitself"
 }

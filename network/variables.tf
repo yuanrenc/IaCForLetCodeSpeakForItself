@@ -35,6 +35,6 @@ variable "enable_nat_gateway" {
 
 variable "application_port" {
   type        = number
-  default     = 3000
+  default     = 4444
   description = "port of the running application"
 }

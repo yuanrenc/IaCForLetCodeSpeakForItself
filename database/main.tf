@@ -14,7 +14,7 @@ resource "aws_db_instance" "postgres" {
   auto_minor_version_upgrade = true
   engine                     = "postgres"
   engine_version             = var.db_version
-  identifier                 = "${var.env}app"
+  identifier                 = "${var.env}letcodespeakforitself"
   instance_class             = var.db_instance
   multi_az                   = true
   db_name                    = "app"

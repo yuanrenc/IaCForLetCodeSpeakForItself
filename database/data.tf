@@ -10,10 +10,10 @@ data "aws_vpc" "vpc" {
 
 data "aws_subnets" "db" {
   filter {
-    name = "vpc-id"
+    name   = "vpc-id"
     values = [data.aws_vpc.vpc.id]
   }
-    filter {
+  filter {
     name = "tag:Name"
     values = [
       "${var.env}-let-code-speak-for-itself-db-ap-southeast-2a",

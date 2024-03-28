@@ -12,7 +12,7 @@ data "template_file" "app" {
 }
 
 resource "aws_cloudwatch_log_group" "app" {
-  name = "applicationLogs"
+  name = "letCodeSpeakForItselfLogs"
 }
 
 resource "aws_ecs_cluster" "app" {
@@ -61,7 +61,7 @@ resource "aws_ecs_service" "app" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.app.arn
-    container_name   = "App"
+    container_name   = "letCodeSpeakForItself"
     container_port   = var.application_port
   }
 
